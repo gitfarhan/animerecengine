@@ -1,8 +1,6 @@
 import pandas as pd
-import numpy as np
 import gradio as gr
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.preprocessing import StandardScaler
+
 
 anime = pd.read_csv('anime.csv')
 anime.name = anime.name.apply(lambda x: x.lower()) 
