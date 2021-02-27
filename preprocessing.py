@@ -3,6 +3,8 @@ from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import numpy as np
 
+print("preprocessing anime data..")
+
 def one_hot_encoder(df, col): 
     return pd.get_dummies(df[col].apply(lambda x: f"{col} {x}"))
 
@@ -35,3 +37,4 @@ scaled_anime_matrix = scaler.fit_transform(anime_matrix)
 anime_matrix_cosine = cosine_similarity(scaled_anime_matrix)
 anime_matrix_cosine_df = pd.DataFrame(anime_matrix_cosine)
 anime_matrix_cosine_df.to_csv('anime_matrix_cosine_df.csv', index=False)
+print("preprocessing done..")
