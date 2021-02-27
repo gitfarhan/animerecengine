@@ -8,7 +8,7 @@ def one_hot_encoder(df, col):
 
 anime = pd.read_csv('anime.csv')
 anime.genre = anime.genre.astype(str)
-anime.name = anime.name.lower() 
+anime.name = anime.name.apply(lambda x: x.lower()) 
 genres = list(anime.genre)
 genre_list = [genre.split(',') for genre in genres]
 gen = []

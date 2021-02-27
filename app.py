@@ -5,7 +5,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import StandardScaler
 
 anime = pd.read_csv('anime.csv')
-anime.name = anime.name.lower() 
+anime.name = anime.name.apply(lambda x: x.lower()) 
 anime_matrix_cosine_df = pd.read_csv('anime_matrix_cosine_df.csv')
 
 def recommend(name):
